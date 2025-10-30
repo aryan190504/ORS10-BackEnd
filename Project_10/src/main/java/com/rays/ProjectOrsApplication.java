@@ -48,7 +48,7 @@ public class ProjectOrsApplication extends SpringBootServletInitializer {
 			public void addCorsMappings(CorsRegistry registry) {
 				CorsRegistration cors = registry.addMapping("/**");
 
-				cors.allowedOrigins("http://localhost:8080");
+				cors.allowedOrigins("http://localhost:4200");
 				cors.allowedHeaders("*");
 				cors.allowCredentials(true);
 			}
