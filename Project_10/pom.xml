@@ -78,10 +78,11 @@
 
 		<!-- 🔥 ONLY FIX ADDED: iText dependency -->
 		<dependency>
-			<groupId>com.lowagie</groupId>
-			<artifactId>itext</artifactId>
-			<version>2.1.7</version>
-		</dependency>
+    <groupId>com.lowagie</groupId>
+    <artifactId>itext</artifactId>
+    <version>2.1.7</version>
+</dependency>
+
 		<!-- 🔥 ONLY THIS LINE ADDED, NOTHING ELSE CHANGED -->
 
 		<dependency>
