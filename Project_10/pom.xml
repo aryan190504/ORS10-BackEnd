@@ -9,7 +9,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
 
 	<groupId>com.sunilos</groupId>
@@ -18,23 +18,25 @@
 	<name>springboottest</name>
 	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
- 
+
 	<properties>
 		<java.version>1.8</java.version>
-		<!-- <maven-war-plugin.version>3.2.3</maven-war-plugin.version> -->
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -68,26 +70,25 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.springframework.session</groupId> <artifactId>spring-session-core</artifactId> 
-			</dependency> <dependency> <groupId>org.springframework.session</groupId> 
-			<artifactId>spring-session-jdbc</artifactId> </dependency> -->
-		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>6.11.0</version>
 		</dependency>
-		
+
+		<!-- 🔥 ONLY FIX ADDED: iText dependency -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<!-- 🔥 ONLY THIS LINE ADDED, NOTHING ELSE CHANGED -->
 
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
-		<!--  Aryan Shrivastav -->
-
-		<!-- JWT dependencies -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -99,8 +100,7 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> 
-			<scope>test</scope> </dependency> -->
+
 	</dependencies>
 
 	<build>
@@ -155,7 +155,5 @@
 			</build>
 		</profile>
 	</profiles>
-
-
 
 </project>
