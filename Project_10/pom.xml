@@ -70,22 +70,25 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
-		<!-- JasperReports with OpenPDF (NO iText errors) -->
-        <dependency>
-            <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports</artifactId>
-            <version>6.20.0</version>
-        </dependency>
+		<!-- ✅ JasperReports with OpenPDF (NO iText) -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.20.0</version>
+		</dependency>
 
-        <dependency>
-           <groupId>com.github.librepdf</groupId>
-           <artifactId>openpdf</artifactId>
-           <version>1.3.26</version>
-        </dependency>
+		<dependency>
+			<groupId>com.github.librepdf</groupId>
+			<artifactId>openpdf</artifactId>
+			<version>1.3.26</version>
+		</dependency>
 
-		
-
-		<!-- 🔥 ONLY THIS LINE ADDED, NOTHING ELSE CHANGED -->
+		<!-- ✅ Required for JasperReports 6.20.0 (Fixes all errors) -->
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>Saxon-HE</artifactId>
+			<version>10.6</version>
+		</dependency>
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -113,12 +116,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
 					<version>${maven-war-plugin.version}</version>
+
 					<executions>
 						<execution>
 							<goals>
@@ -127,10 +132,12 @@
 							<phase>package</phase>
 						</execution>
 					</executions>
+
 					<configuration>
 						<warSourceIncludes>WEB-INF/**,META-INF/**</warSourceIncludes>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 						<warSourceDirectory>target/classes/static/</warSourceDirectory>
+
 						<webResources>
 							<resource>
 								<directory>src/main/webapp</directory>
@@ -140,6 +147,7 @@
 							</resource>
 						</webResources>
 					</configuration>
+
 				</plugin>
 			</plugins>
 		</pluginManagement>
